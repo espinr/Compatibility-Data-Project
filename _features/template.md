@@ -12,7 +12,8 @@ links: {
 behaviour: {
     wkwebview: "",
     androidwebview: "",
-    webview2: ""
+    webview2: "",
+    arkweb: ""
 }
 stats: {
     wkwebview: {
@@ -36,6 +37,11 @@ stats: {
             "*": "u"
         }
     },
+    arkweb: {
+        harmonyos: {
+            "*": "u"
+        }
+    },    
     chrome_android: {
         android: {
             "*": "u"

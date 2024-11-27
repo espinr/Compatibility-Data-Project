@@ -86,6 +86,11 @@ module Generated
 					"*" => "u"
 					}
 				},
+				"arkweb" => {
+					"harmonyos" => {
+					"*" => "u"
+					}
+				},
 				"chrome_android" => {
 					"android" => getVersions(feature, "chrome_android")
 				},

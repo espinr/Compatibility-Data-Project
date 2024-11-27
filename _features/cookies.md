@@ -19,7 +19,8 @@ still have to opt into this behavior in their app settings.
 Different WebViews or the native app can also share cookies by using HTTPCookieStorage.",
     androidwebview: "Third party cookies are disabled by default within Android WebView. Applications can re-enable third party cookies
 using the [CookieManager#setAcceptThirdPartyCookies](https://developer.android.com/reference/android/webkit/CookieManager#setAcceptThirdPartyCookies(android.webkit.WebView,%20boolean)) API.",
-    webview2: "Applications can access, modify, delete, or copy the cookies of their WebView2 instance via the `CoreWebView2.CookieManager` property. By default, WebView2 has [Tracking Prevention](https://learn.microsoft.com/microsoft-edge/web-platform/tracking-prevention) set to \"Balanced\" by default and can be modified using the `CoreWebView2EnvironmentOptions.EnableTrackingPrevention` property."
+    webview2: "Applications can access, modify, delete, or copy the cookies of their WebView2 instance via the `CoreWebView2.CookieManager` property. By default, WebView2 has [Tracking Prevention](https://learn.microsoft.com/microsoft-edge/web-platform/tracking-prevention) set to \"Balanced\" by default and can be modified using the `CoreWebView2EnvironmentOptions.EnableTrackingPrevention` property.",
+    arkweb: "Third-party cookies are disabled by default in Arkweb. Developers can manage them through [WebCookieManager](https://developer.huawei.com/consumer/en/doc/harmonyos-references-V5/js-apis-webview-V5#webcookiemanager)."
 }
 stats: {
     wkwebview: {
@@ -43,6 +44,11 @@ stats: {
             "*": "y"
         }
     },
+    arkweb: {
+        harmonyos: {
+            "*": "y"
+        }
+    },    
     chrome_android: {
         android: {
             "*": "u"

@@ -5,12 +5,14 @@ family:
   webview2: "WebView2"
   chrome_android: "Chrome Browser"
   safari_ios: "Safari Browser"
+  arkweb: "ArkWeb" 
 platform:
   ios: "iOS"
   ipados: "iPadOS"
   android: "Android"
   windows: "Windows"
   macos: "macOS"
+  harmonyos: "HarmonyOS"
 support:
   supported: "Supported"
   mitigated: "Workaround available"
