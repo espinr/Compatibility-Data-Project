@@ -5,12 +5,12 @@ url: https://espinr.github.io/Compatibility-Data-Project
 collections:
   posts:
     output: true
-    permalink: /news/:year-:month-:day-:title/
+    permalink: /Compatibility-Data-Project/news/:year-:month-:day-:title/
   features:
     output: true
   generated_features:
     output: true
-    permalink: /features/:name/
+    permalink: /Compatibility-Data-Project/features/:name/
   clients:
     output: true
 
@@ -40,7 +40,7 @@ defaults:
     values:
       layout: "default"
 
-permalink: /:title/
+permalink: /Compatibility-Data-Project/:title/
 
 plugins:
   - jekyll-mentions
