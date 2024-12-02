@@ -39,7 +39,7 @@ permalink: /clients/
 			</ul>
 		</div>
 
-		<form action="/" method="get" id="compare-form" class="compare-form">
+		<form action="{{ site.url }}/" method="get" id="compare-form" class="compare-form">
 			<div class="compare-title">
 				<legend>
 					WebView
@@ -136,5 +136,5 @@ permalink: /clients/
 		</div>
 	</div>
 </div>
-<link rel="prefetch" href="/api/data-ordered.json" />
-<script src="/assets/js/compare.js" defer></script>
+<link rel="prefetch" href="{{ site.url }}/api/data-ordered.json" />
+<script src="{{ site.url }}/assets/js/compare.js" defer></script>
