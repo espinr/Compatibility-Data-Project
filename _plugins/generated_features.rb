@@ -37,7 +37,7 @@ module Generated
 		end
 
 		if version.nil? || version.empty?  then
-			version = "unkonwn"
+			version = "unknown"
 		end
 
 		return {
