@@ -2,7 +2,7 @@
 {% for category in include.features %}
 	{% assign categoryName = site.data.nicenames.category[category.name] | default: category.name %}
 	<h2 class="list-title" id="title-{{ category.name | slugify }}">
-		<a href="/search/?cat={{category.name}}">
+		<a href="{{ site.url }}/search/?cat={{category.name}}">
 			{{ categoryName }}
 		</a>
 	</h2>
@@ -13,7 +13,7 @@
 		{% endfor %}
 		{% if features.size > maximumFeaturesLength %}
 		<li>
-			<a href="/search/?cat={{category.name}}">
+			<a href="{{ site.url }}/search/?cat={{category.name}}">
 				All {{ categoryName }} features
 			</a>
 		</li>

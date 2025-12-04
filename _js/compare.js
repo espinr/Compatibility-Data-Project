@@ -8,6 +8,7 @@ permalink: "/assets/js/compare.js"
 			this.data = null;
 			this.nicenames = null;
 			this.resultsContainer = null;
+			this.selectedCategories = ['all'];
 			this.panel = document.querySelector('.compare');
 			this.form = document.getElementById('compare-form');
 
@@ -22,6 +23,7 @@ permalink: "/assets/js/compare.js"
 			this.addEventToResetButton();
 			this.addEventToDevicesButtons();
 			this.addEventToCheckboxes();
+			this.addCategoryFilter();
 
 			if (!this.data) {
 				this.loadJSONFile();
@@ -79,11 +81,31 @@ permalink: "/assets/js/compare.js"
 					checkbox.checked = false;
 				});
 			}
+
+			const savedCategoryString = this.getCategoryStorage();
+			if (savedCategoryString && savedCategoryString !== '') {
+				this.selectedCategories = JSON.parse(savedCategoryString);
+				const categorySection = document.querySelector('.category');
+
+				// TODO: The all category is a total hack and should be removed
+				// at some point. We should just deal with the category values
+				// the same way the other browsers work.
+				if (!this.selectedCategories.includes('all')) {
+					document.querySelector('.category').querySelectorAll('.category-filter').forEach(checkbox =>
+						checkbox.checked = false
+					);
+				
+					this.selectedCategories.forEach(category => {
+						const checkbox = categorySection.querySelector(`#filter-category-${category}`);
+						checkbox.checked = true;
+					});
+				}
+			}
 		}
 
 		addEventToCheckboxes() {
 
-			const checkboxes = this.panel.querySelectorAll('input[type="checkbox"]');
+			const checkboxes = this.panel.querySelector('#compare-form').querySelectorAll('input[type="checkbox"]');
 			checkboxes.forEach(checkbox => {
 				checkbox.addEventListener('click', e => {
 					if (checkbox.parentNode.className == 'compare-list-item') {
@@ -147,6 +169,7 @@ permalink: "/assets/js/compare.js"
 					checkbox.indeterminate = false;
 				});
 				button.setAttribute(dataAttributeChecked, !checkValue);
+				this.selectedCategories = checkValue ? ['all'] : [];
 
 				this.setLocalStorage();
 				this.refresh();
@@ -157,7 +180,7 @@ permalink: "/assets/js/compare.js"
 			const android = ['androidwebview', 'chrome_android'];
 			const ios = ['wkwebview', 'safari_ios'];
 			const androidButton = this.panel.querySelector('#compare-android-button');
-			const iosButton = this.panel.querySelector('#compare-ios-button');
+			const iosButton = this.panel.querySelector('#compare-apple-button');
 
 			androidButton.addEventListener('click', e => {
 				e.preventDefault();
@@ -194,6 +217,19 @@ permalink: "/assets/js/compare.js"
 				this.refresh();
 				this.setLocalStorage();
 			});
+		}
+
+		addCategoryFilter() {
+			const categorySelect = document.querySelectorAll('.category-filter');
+			categorySelect.forEach(checkbox =>
+					checkbox.addEventListener('change', (e) => {
+					this.selectedCategories = Array.from(categorySelect)
+						.filter(opt => opt.checked)
+						.map(opt => opt.id.slice("filter-category-".length));
+
+					this.refresh();
+					this.setLocalStorage();
+				}));
 		}
 
 		loadJSONFile() {
@@ -356,6 +392,13 @@ permalink: "/assets/js/compare.js"
 			let featuresBySupport = { 'y': [], 'a': [], 'n': [], 'u': [], 'm': [] };
 			const formData = new FormData(this.form);
 			this.data.forEach(feature => {
+				// The "All" category selected by default should let you filter to everything
+				// so we check against both that and the items category.
+				// If neither is selected, we should filter out the feature.
+				if (!['all', feature.category].some(c => this.selectedCategories.includes(c))) {
+					return;
+				}
+
 				let averageSupportValue = null;
 				for (let key of formData.entries()) {
 					if (key[1].toLowerCase() !== 'on') {
@@ -418,14 +461,17 @@ permalink: "/assets/js/compare.js"
 		}
 
 		setLocalStorage() {
-
 			const data = this.getFormDataToString();
 			localStorage.setItem('compare', data);
+			localStorage.setItem('category', JSON.stringify(this.selectedCategories));
 		}
 
 		getLocalStorage() {
-
 			return localStorage.getItem('compare');
+		}
+
+		getCategoryStorage() {
+			return localStorage.getItem('category');
 		}
 	}
 
