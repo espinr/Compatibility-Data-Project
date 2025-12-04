@@ -1,6 +1,6 @@
 title: CanIWebView
 repository: WebView-CG/Compatibility-Data-Project
-url: https://espinr.github.io/Compatibility-Data-Project
+baseurl: /Compatibility-Data-Project/ 
 
 collections:
   posts:
