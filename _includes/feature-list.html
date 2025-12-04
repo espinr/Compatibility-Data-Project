@@ -9,7 +9,7 @@
 	<ul class="list list--features">
 		{% assign features = category.items | sort:'id' %}
 		{% for feature in features limit: maximumFeaturesLength %}
-			<li><a href="{{ feature.url }}">{{ feature.title | escape_once }}</a></li>
+			<li><a href="{{ site.baseurl }}{{ feature.url }}">{{ feature.title | escape_once }}</a></li>
 		{% endfor %}
 		{% if features.size > maximumFeaturesLength %}
 		<li>
