@@ -69,7 +69,7 @@ class Search {
 
 	loadJSONFile() {
 		if(!this.data) {
-			fetch('{{ site.url }}/assets/js/features.json')
+			fetch('{{ site.baseurl }}/assets/js/features.json')
 			.then(response => {
 				return response.json();
 			})

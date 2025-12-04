@@ -1,11 +1,11 @@
 <header class="header" role="banner">
 	<div class="menu">
-		<img src="{{ site.url }}/assets/images/w3-community-logo.png" class="w3-community-logo" title="W3C WebView Community Group" />
+		<img src="{{ site.baseurl }}/assets/images/w3-community-logo.png" class="w3-community-logo" title="W3C WebView Community Group" />
 		{% include navigation.html %}
 		{% include latest-post.html %}
-		<a href="{{ site.url }}/clients/" class="tab{% if page.url == '/clients/' %} current{% endif %}"><span
+		<a href="{{ site.baseurl }}/clients/" class="tab{% if page.url == '/clients/' %} current{% endif %}"><span
 				class="tab-longname">Compare </span>WebViews</a>
-		<a href="{{ site.url }}/about/" class="tab{% if page.url == '/about/' %} current{% endif %}">About</a>
+		<a href="{{ site.baseurl }}/about/" class="tab{% if page.url == '/about/' %} current{% endif %}">About</a>
 	</div>
 	<section class="search-wrapper">
 		{% include search.html %}
