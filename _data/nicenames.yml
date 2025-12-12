@@ -5,7 +5,8 @@ family:
   webview2: "WebView2"
   chrome_android: "Chrome Browser"
   safari_ios: "Safari Browser"
-  arkweb: "ArkWeb" 
+  arkweb: "ArkWeb"
+  servo: "Servo" 
 platform:
   ios: "iOS"
   ipados: "iPadOS"

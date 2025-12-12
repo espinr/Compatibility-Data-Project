@@ -50,6 +50,17 @@ stats: {
             "*": "u"
         }
     },
+    servo: {
+        harmonyos: {
+            "*": "u"
+        },
+        windows: {
+            "*": "u"
+        },
+        android: {
+            "*": "u"
+        }        
+    },
     safari_ios: {
         ios: {
             "*": "u"

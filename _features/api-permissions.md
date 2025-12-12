@@ -47,6 +47,17 @@ stats: {
             "*": "a"
         }
     },
+    servo: {
+        harmonyos: {
+            "*": "u"
+        },
+        windows: {
+            "*": "u"
+        },
+        android: {
+            "*": "u"
+        }        
+    },
     chrome_android: {
         android: {
             "*": "u"
