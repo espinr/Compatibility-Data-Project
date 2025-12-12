@@ -12,7 +12,8 @@ behaviour: {
     wkwebview: "",
     androidwebview: "[shouldInterceptRequest](https://developer.android.com/reference/android/webkit/WebViewClient#shouldInterceptRequest(android.webkit.WebView,%20android.webkit.WebResourceRequest)) in Android WebView provides developers with optional network interception capability. ",
     webview2: "",
-    arkweb: "Arkweb allows developers to intercept requests [`onInterceptRequest`](https://developer.huawei.com/consumer/en/doc/harmonyos-references-V5/ts-basic-components-web-V5#oninterceptrequest9), and management of [custom URL schemes](https://developer.huawei.com/consumer/en/doc/harmonyos-references-V5/js-apis-webview-V5#setwebschemehandler12)."
+    arkweb: "Arkweb allows developers to intercept requests [`onInterceptRequest`](https://developer.huawei.com/consumer/en/doc/harmonyos-references-V5/ts-basic-components-web-V5#oninterceptrequest9), and management of [custom URL schemes](https://developer.huawei.com/consumer/en/doc/harmonyos-references-V5/js-apis-webview-V5#setwebschemehandler12).",
+    servo: ""
 }
 stats: {
     wkwebview: {

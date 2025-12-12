@@ -15,7 +15,8 @@ behaviour: {
 
 Android WebView does not provide APIs to manage localStorage/sessionStorage.",
     webview2: "",
-    arkweb: "ArkWeb provides APIs to manage [local and session storage](https://developer.huawei.com/consumer/en/doc/harmonyos-guides-V5/web-cookie-and-data-storage-mgmt-V5), developers must [enable it](https://developer.huawei.com/consumer/en/doc/harmonyos-references-V5/ts-basic-components-web-V5#domstorageaccess) explicitly. No selective and granular options available."
+    arkweb: "ArkWeb provides APIs to manage [local and session storage](https://developer.huawei.com/consumer/en/doc/harmonyos-guides-V5/web-cookie-and-data-storage-mgmt-V5), developers must [enable it](https://developer.huawei.com/consumer/en/doc/harmonyos-references-V5/ts-basic-components-web-V5#domstorageaccess) explicitly. No selective and granular options available.",
+    servo: ""
 }
 stats: {
     wkwebview: {
