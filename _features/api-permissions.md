@@ -50,7 +50,7 @@ stats: {
         }
     },
     arkweb: {
-        openharmony: {
+        harmonyos: {
             "*": "a"
         }
     }
