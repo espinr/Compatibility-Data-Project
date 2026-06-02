@@ -48,7 +48,7 @@ stats: {
         }
     },
     arkweb: {
-        harmonyos: {
+        openharmony: {
             "*": "y"
         }
     }
