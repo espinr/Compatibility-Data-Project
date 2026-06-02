@@ -46,6 +46,11 @@ stats: {
         ios: {
             "*": "u"
         }
+    },
+    arkweb: {
+        openharmony: {
+            "*": "y"
+        }
     }
 }
 ---

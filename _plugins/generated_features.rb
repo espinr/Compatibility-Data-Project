@@ -78,7 +78,7 @@ module Generated
 		end
 
 		if version.nil? || version.empty?  then
-			version = "unkonwn"
+			version = "unknown"
 		end
 
 		return {
@@ -226,7 +226,11 @@ module Generated
 				},
 			}
 			latest_results.each do |client, data|
-				platform = client == "wpe_minibrowser" ? "linux" : "android"
+				platform = case client
+					when "wpe_minibrowser" then "linux"
+					when "arkweb"          then "openharmony"
+					else "android"
+					end
 				support = data['results'].fetch(bcd_key, "u")
 				version = data['version']
 				stats[client] = { platform => { version => support } }
