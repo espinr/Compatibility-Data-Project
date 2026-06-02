@@ -141,7 +141,8 @@ module Generated
 
 		# Servo and any other latest-* files come from the WebView-CG repo.
 		api_url = "https://api.github.com/repos/espinr/webview-bcd-results/contents/results"
-		SUPPORTED_ENGINES = {
+
+		supported_engines = {
 			'servo' => 'latest-servo',
 			'arkweb' => 'latest-arkweb' 
 		}
@@ -151,7 +152,7 @@ module Generated
 		files.each do |file|
 			name = file['name']
 
-			engine_key = SUPPORTED_ENGINES.find { |_, prefix| name.start_with?(prefix) }&.first
+			engine_key = supported_engines.find { |_, prefix| name.start_with?(prefix) }&.first
   			next unless engine_key 
 			begin
 				content = HTTParty.get(file['download_url']).body
