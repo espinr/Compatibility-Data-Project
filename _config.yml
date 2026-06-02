@@ -6,12 +6,12 @@ url: https://caniwebview.com
 collections:
   posts:
     output: true
-    permalink: /Compatibility-Data-Project//news/:year-:month-:day-:title/
+    permalink: /news/:year-:month-:day-:title/
   features:
     output: true
   generated_features:
     output: true
-    permalink: /Compatibility-Data-Project/features/:name/
+    permalink: /features/:name/
   clients:
     output: true
 
@@ -41,7 +41,7 @@ defaults:
     values:
       layout: "default"
 
-permalink: /Compatibility-Data-Project/:title/
+permalink: /:title/
 
 plugins:
   - jekyll-mentions
