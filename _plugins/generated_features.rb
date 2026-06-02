@@ -226,7 +226,8 @@ module Generated
 				},
 			}
 			latest_results.each do |client, data|
-				platform = client == "wpe_minibrowser" ? "linux" : "android"
+				platform = client === "wpe_minibrowser" ? "linux" : 
+					client === "arkweb" ? "openharmony"   : "android";
 				support = data['results'].fetch(bcd_key, "u")
 				version = data['version']
 				stats[client] = { platform => { version => support } }
