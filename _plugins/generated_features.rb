@@ -140,17 +140,24 @@ module Generated
 		results['wpe_minibrowser'] = wpe if wpe
 
 		# Servo and any other latest-* files come from the WebView-CG repo.
-		api_url = "https://api.github.com/repos/WebView-CG/webview-bcd-results/contents/results"
+		api_url = "https://api.github.com/repos/espinr/webview-bcd-results/contents/results"
+		SUPPORTED_ENGINES = {
+			'servo' => 'latest-servo',
+			'arkweb' => 'latest-arkweb' 
+		}
+		
 		response = HTTParty.get(api_url, headers: { "User-Agent" => "CanIWebView-build" })
 		files = JSON.parse(response.body)
 		files.each do |file|
 			name = file['name']
-			next unless name.start_with?('latest-servo')
+
+			engine_key = SUPPORTED_ENGINES.find { |_, prefix| name.start_with?(prefix) }&.first
+  			next unless engine_key 
 			begin
 				content = HTTParty.get(file['download_url']).body
 				parsed = JSON.parse(content)
 				version = extract_version_from_results(name) || 'latest'
-				results['servo'] = {
+				results[engine_key] = {
 					'results' => parse_bcd_collector_results(parsed),
 					'version' => version,
 					'source_url' => file['html_url'],
