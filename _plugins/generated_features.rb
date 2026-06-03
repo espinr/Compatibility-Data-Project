@@ -224,6 +224,11 @@ module Generated
 				"safari_ios" => {
 					"ios" => getVersions(feature, "safari_ios")
 				},
+				"arkweb" => {
+					"openharmony" => {
+						"*" => "u"
+					}
+				},
 			}
 			latest_results.each do |client, data|
 				platform = client == "wpe_minibrowser" ? "linux" : "android"
