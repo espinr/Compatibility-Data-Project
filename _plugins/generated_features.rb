@@ -226,11 +226,7 @@ module Generated
 				},
 			}
 			latest_results.each do |client, data|
-				platform = case client
-					when "wpe_minibrowser" then "linux"
-					when "arkweb"          then "openharmony"
-					else "android"
-					end
+				platform = client == "wpe_minibrowser" ? "linux" : "android"
 				support = data['results'].fetch(bcd_key, "u")
 				version = data['version']
 				stats[client] = { platform => { version => support } }
