@@ -50,7 +50,7 @@ stats: {
         }
     },
     arkweb: {
-        ohos: {
+        harmonyos: {
             "*": "a"
         }
     }
