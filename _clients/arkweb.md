@@ -1,5 +1,5 @@
 ---
-platforms: [harmonyos]
+platforms: [ohos]
 display_order: 6
 webview: true
 ---

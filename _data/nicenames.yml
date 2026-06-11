@@ -14,7 +14,7 @@ platform:
   windows: "Windows"
   macos: "macOS"
   linux: "Linux"
-  harmonyos: "HarmonyOS"
+  ohos: "OpenHarmony"
 support:
   supported: "Supported"
   mitigated: "Partial support"
