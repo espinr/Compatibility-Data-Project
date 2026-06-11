@@ -42,7 +42,7 @@ for (const key in features) {
 			}
 		},
 		arkweb: {
-			harmonyos: {
+			openharmony: {
 				"*": "u"
 			}
 		}
